@@ -376,7 +376,7 @@ const stageMeta = id => STAGES.find(s=>s.id===id) || STAGES[0];
 
 /* ================== LIVE SUPABASE CONFIG ================== */
 const SUPABASE_URL = 'https://qcnqnxetsmbcejxvplsi.supabase.co';
-const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY_HERE';   // <-- paste the anon/public key here before hosting
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFjbnFueGV0c21iY2VqeHZwbHNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIxNDYyNzksImV4cCI6MjA5NzcyMjI3OX0.d_6SSN0yFfAm9-LlmO6czCbMGk6EsVyFksjl7J8u-RA';   // <-- paste the anon/public key here before hosting
 const TEAM_PASSWORD = 'leone2026';                // <-- change to whatever the team should type
 let sb = null;
 try { sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } catch(e){ console.error('Supabase init failed', e); }
