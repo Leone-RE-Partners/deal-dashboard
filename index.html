@@ -411,7 +411,7 @@ function mapDbDeal(r){
     review: !!r.needs_review,
     killed: killed,
     killReason: r.kill_reason || '',
-    killedBy: r.killed_name || r.kill_reason ? (r.killed_name||'') : '',
+    killedBy: '',
     killedDate: r.killed_at ? String(r.killed_at).slice(0,10) : '',
     emails: [],
     notes: [],
@@ -1022,7 +1022,7 @@ async function bootLive(){
     // pull deals with joined broker
     const { data: deals, error: de } = await sb
       .from('deals')
-      .select('id,name,asset_class,units,address,year_built,cap_rate,stage_auto,stage_manual,assigned_name,needs_review,status,kill_reason,killed_at,killed_name,latest_email_at,updated_at,merged_into,broker_id,brokers(name,firm)')
+      .select('id,name,asset_class,units,address,year_built,cap_rate,stage_auto,stage_manual,assigned_name,needs_review,status,kill_reason,killed_at,latest_email_at,updated_at,merged_into,broker_id,brokers(name,firm)')
       .is('merged_into', null);
     if(de) throw de;
 
